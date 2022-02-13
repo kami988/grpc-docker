@@ -28,4 +28,12 @@ setup:
 	make install-grpc
 
 generate:
-	protoc --go_out=. --go_opt=paths=source_relative ./1.18/11-workspace/def/*.proto
+	protoc --go_out=. --go_opt=paths=source_relative \
+	--go-grpc_out=. --go-grpc_opt=paths=source_relative \
+	./def/*.proto
+up:
+	docker-compose up -d --build
+
+test:
+	go work use -r .
+	go test -race -covermode=atomic ./api/... -test.v -p=8  -count=1
