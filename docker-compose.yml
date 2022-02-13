@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  dev-go-beta:
+    build: ./
+    environment:
+      GOPRIVATE: github.com/kami988/*
+      GITHUB_USER_NAME: ${GITHUB_USER_NAME}
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+      GITHUB_EMAIL: ${GITHUB_EMAIL}
+    volumes:
+      - "./:/repo"
+      - "kami988.grpc-sample.go.1.18beta2:/go"
+    ports:
+      - "8080:8080"
+    tty: true
+
+volumes:
+  kami988.grpc-sample.go.1.18beta2:

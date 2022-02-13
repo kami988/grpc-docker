@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "DavidAnson.vscode-markdownlint",
+        "rebornix.project-snippets",
+        "golang.Go",
+        "mfuentesg.vscode-protolint",
+        "zxh404.vscode-proto3"
+    ]
+}

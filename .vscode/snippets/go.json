@@ -1,0 +1,58 @@
+{
+  "constructor": {
+    "prefix": "ctor",
+    "body": [
+      "// New${1:Struct} はコンストラクタです",
+      "func New${1:Struct}(value ${2:type}) UserID { return ${1:Struct}{value} }"
+    ]
+  },
+  "getter": {
+    "prefix": "getter",
+    "body": [
+      "func (t *${1:struct}) Get${2:Value}() ${3:type} { return t.${2:value} }"
+    ]
+  },
+  "getterForVO": {
+    "prefix": "gvo",
+    "body": [
+      "// GetValue です",
+      "func (t ${1:struct}) GetValue() ${2:type} { return t.value }"
+    ]
+  },
+  "setter": {
+    "prefix": "setter",
+    "body": [
+      "func (t ${1:struct}) Set${2:Name}(value ${3:type}) { t.${2:name} = value }"
+    ]
+  },
+  "test": {
+    "prefix": "test",
+    "body": [
+      "func Test${1:Name}(t *testing.T) {",
+      "  ${2}",
+      "}"
+    ]
+  },
+  "package": {
+    "prefix": "pkg",
+    "body": [
+      "package ${1:Name}"
+    ]
+  },
+  "type": {
+    "prefix": "type",
+    "body": [
+      "type (",
+      "${2:Value}",
+      ")"
+    ]
+  },
+  "const": {
+    "prefix": "const",
+    "body": [
+      "const (",
+      "${2:Value}",
+      ")"
+    ]
+  }
+}
